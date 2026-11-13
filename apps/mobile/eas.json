@@ -8,7 +8,8 @@
       "distribution": "internal",
       "channel": "client",
       "android": {
-        "buildType": "apk"
+        "buildType": "apk",
+        "credentialsSource": "local"
       },
       "env": {
         "EXPO_PUBLIC_API_URL": "https://test.sandipandas.website"

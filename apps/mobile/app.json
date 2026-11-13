@@ -24,6 +24,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6678f320-3470-4a80-8764-f5cbda550a88"
+      }
+    },
+    "owner": "gyanoda_studybloom24"
   }
 }

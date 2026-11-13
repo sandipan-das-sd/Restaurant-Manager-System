@@ -5,6 +5,8 @@ dist/
 *.tsbuildinfo
 .env
 .env.local
+apps/mobile/credentials.json
+apps/mobile/credentials/
 npm-debug.log*
 .DS_Store
 apps/web/dist/
