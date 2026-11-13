@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   body: { flex: 1 },
   center: { flex: 1, alignItems: "center", justifyContent: "center", gap: 12 },
   muted: { color: theme.muted },
-  gate: { flex: 1, backgroundColor: theme.paper, padding: 24, paddingTop: 64 },
+  gate: { flex: 1, backgroundColor: theme.paper, padding: 24, paddingTop: 64, paddingBottom: 110 },
   eyebrow: { color: theme.muted, fontSize: 13 },
   gateTitle: { marginTop: 8, color: theme.ink, fontSize: 32, lineHeight: 36, fontWeight: "600" },
   gateLede: { marginTop: 12, color: theme.muted, fontSize: 16 },

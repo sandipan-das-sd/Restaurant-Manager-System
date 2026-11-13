@@ -16,7 +16,11 @@ export function TabBar({ current, onChange }: { current: TabKey; onChange: (tab:
       {TABS.map((tab) => {
         const active = tab.key === current;
         return (
-          <Pressable key={tab.key} style={styles.tab} onPress={() => onChange(tab.key)}>
+          <Pressable
+            key={tab.key}
+            style={[styles.tab, active ? styles.tabActive : null]}
+            onPress={() => onChange(tab.key)}
+          >
             <Text style={[styles.label, active ? styles.active : null]}>{tab.label}</Text>
           </Pressable>
         );
@@ -27,13 +31,23 @@ export function TabBar({ current, onChange }: { current: TabKey; onChange: (tab:
 
 const styles = StyleSheet.create({
   bar: {
+    position: "absolute",
+    left: 16,
+    right: 16,
+    bottom: 22,
     flexDirection: "row",
-    borderTopWidth: 1,
-    borderTopColor: theme.line,
-    backgroundColor: theme.card,
-    paddingBottom: 10,
+    backgroundColor: theme.ink,
+    borderRadius: 999,
+    paddingVertical: 6,
+    paddingHorizontal: 6,
+    elevation: 10,
+    shadowColor: "#1a1714",
+    shadowOpacity: 0.28,
+    shadowRadius: 16,
+    shadowOffset: { width: 0, height: 8 },
   },
-  tab: { flex: 1, alignItems: "center", paddingVertical: 14 },
-  label: { color: theme.muted, fontWeight: "600" },
+  tab: { flex: 1, alignItems: "center", borderRadius: 999, paddingVertical: 12 },
+  tabActive: { backgroundColor: theme.cream },
+  label: { color: "#d9cfc3", fontWeight: "600" },
   active: { color: theme.ink },
 });

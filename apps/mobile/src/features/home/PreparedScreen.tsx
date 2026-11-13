@@ -26,7 +26,7 @@ export function PreparedScreen({
 }
 
 const styles = StyleSheet.create({
-  page: { flex: 1, backgroundColor: theme.paper, padding: 24, paddingTop: 64, gap: 10 },
+  page: { flex: 1, backgroundColor: theme.paper, padding: 24, paddingTop: 64, paddingBottom: 110, gap: 10 },
   eyebrow: { color: theme.muted, fontSize: 13 },
   title: { color: theme.ink, fontSize: 36, lineHeight: 40, fontWeight: "600" },
   lede: { color: theme.muted, fontSize: 16, marginBottom: 8 },

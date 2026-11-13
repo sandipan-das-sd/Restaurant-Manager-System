@@ -38,7 +38,7 @@ export function HomeScreen({
 }
 
 const styles = StyleSheet.create({
-  page: { flex: 1, backgroundColor: theme.paper, padding: 24, paddingTop: 64 },
+  page: { flex: 1, backgroundColor: theme.paper, padding: 24, paddingTop: 64, paddingBottom: 110 },
   eyebrow: { color: theme.muted, fontSize: 13 },
   title: { marginTop: 8, color: theme.ink, fontSize: 36, lineHeight: 40, fontWeight: "600" },
   lede: { marginTop: 12, color: theme.muted, fontSize: 18, maxWidth: 280 },

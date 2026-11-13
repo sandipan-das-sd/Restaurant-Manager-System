@@ -80,7 +80,7 @@ export function DashboardScreen({ user, onSignOut }: { user: AuthUser; onSignOut
 
 const styles = StyleSheet.create({
   desk: { flex: 1, backgroundColor: theme.paper },
-  stage: { padding: 24, paddingBottom: 48 },
+  stage: { padding: 24, paddingBottom: 120 },
   welcome: { marginTop: 16, fontSize: 32, lineHeight: 36, fontWeight: "600", color: theme.ink },
   person: { marginTop: 14, fontSize: 20, fontWeight: "600", color: theme.ink },
   description: { marginTop: 6, fontSize: 16, color: theme.muted },
