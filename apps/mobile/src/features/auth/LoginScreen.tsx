@@ -4,7 +4,15 @@ import { APP_NAME, DEMO_ACCOUNTS, DEMO_PASSWORD, roleByKey, type AuthUser } from
 import { ApiError, signInRequest } from "../../config/api";
 import { theme } from "../../config/theme";
 
-export function LoginScreen({ onSignedIn }: { onSignedIn: (user: AuthUser) => void }) {
+export function LoginScreen({
+  onSignedIn,
+  onCreateAccount,
+  onBack,
+}: {
+  onSignedIn: (user: AuthUser) => void;
+  onCreateAccount: () => void;
+  onBack: () => void;
+}) {
   const [email, setEmail] = useState(DEMO_ACCOUNTS[0].email);
   const [password, setPassword] = useState(DEMO_PASSWORD);
   const [error, setError] = useState<string | null>(null);
@@ -25,6 +33,9 @@ export function LoginScreen({ onSignedIn }: { onSignedIn: (user: AuthUser) => vo
 
   return (
     <ScrollView contentContainerStyle={styles.login} keyboardShouldPersistTaps="handled">
+      <Pressable onPress={onBack} style={styles.backWrap}>
+        <Text style={styles.back}>Back to home</Text>
+      </Pressable>
       <View style={styles.brand}>
         <Text style={styles.eyebrow}>Staff desk</Text>
         <Text style={styles.wordmark}>{APP_NAME}</Text>
@@ -44,6 +55,9 @@ export function LoginScreen({ onSignedIn }: { onSignedIn: (user: AuthUser) => vo
       {error ? <Text style={styles.error}>{error}</Text> : null}
       <Pressable style={styles.primary} disabled={pending} onPress={() => void submit(email, password)}>
         <Text style={styles.primaryText}>{pending ? "Opening…" : "Enter the desk"}</Text>
+      </Pressable>
+      <Pressable onPress={onCreateAccount}>
+        <Text style={styles.create}>Create an account</Text>
       </Pressable>
       <Text style={styles.hint}>Or open a demo role. Password for each is {DEMO_PASSWORD}.</Text>
       <View style={styles.chips}>
@@ -72,7 +86,10 @@ export function LoginScreen({ onSignedIn }: { onSignedIn: (user: AuthUser) => vo
 
 const styles = StyleSheet.create({
   login: { paddingBottom: 40, backgroundColor: theme.paper },
-  brand: { backgroundColor: theme.ink, paddingTop: 72, paddingHorizontal: 24, paddingBottom: 28, gap: 8 },
+  backWrap: { backgroundColor: theme.ink, paddingTop: 56, paddingHorizontal: 24 },
+  back: { color: "#d9cfc3" },
+  brand: { backgroundColor: theme.ink, paddingTop: 16, paddingHorizontal: 24, paddingBottom: 28, gap: 8 },
+  create: { color: theme.ink, fontWeight: "600", marginTop: 16, marginHorizontal: 24 },
   eyebrow: { color: "#d9cfc3", fontSize: 13 },
   wordmark: { color: theme.cream, fontSize: 36, fontWeight: "600", lineHeight: 40 },
   lede: { color: "#d9cfc3", fontSize: 18, maxWidth: 240 },
