@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Restaurant Manager System",
+    "slug": "restaurant-manager-system",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "website.sandipandas.restaurantmanager",
+      "adaptiveIcon": {
+        "backgroundColor": "#1a1714",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

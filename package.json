@@ -1,0 +1,23 @@
+{
+  "name": "dhabar",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,web -c cyan,magenta \"npm run dev -w @dhabar/server\" \"npm run dev -w @dhabar/web\"",
+    "dev:mobile": "npm run start -w @dhabar/mobile",
+    "apk": "npm run apk -w @dhabar/mobile",
+    "ota": "npm run ota -w @dhabar/mobile",
+    "build": "npm run build -w @dhabar/server && npm run build -w @dhabar/web && npm run typecheck -w @dhabar/mobile",
+    "test": "npm test -w @dhabar/server",
+    "typecheck": "npm run typecheck -w @dhabar/server && npm run typecheck -w @dhabar/web && npm run typecheck -w @dhabar/mobile"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
